@@ -13,6 +13,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class TambahData extends javax.swing.JFrame {
@@ -22,6 +23,8 @@ public class TambahData extends javax.swing.JFrame {
      */
     public TambahData() {
         initComponents();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setLocationRelativeTo(null); 
     }
 
     /**

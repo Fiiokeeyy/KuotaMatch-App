@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import javax.swing.JFrame;
 
 public class MenuUtama extends javax.swing.JFrame {
 
@@ -24,6 +25,8 @@ public class MenuUtama extends javax.swing.JFrame {
      */
     public MenuUtama() {
         initComponents();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setLocationRelativeTo(null); 
     }
 
     /**
@@ -50,24 +53,29 @@ public class MenuUtama extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         btntambahpaket = new javax.swing.JButton();
         btnkeloladata = new javax.swing.JButton();
+        btnKembali = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        tambah_paket_baru = new javax.swing.JMenuItem();
+        kelola_data = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel1.setBackground(new java.awt.Color(239, 248, 255));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 102));
         jLabel1.setText("Bobot Harga (%)");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 102));
         jLabel2.setText("Bobot Kuota (%)");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 102));
         jLabel3.setText("Bobot Masa Aktif (%)");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 1, 16)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 102));
         jLabel4.setText("Bobot Sinyal (%)");
 
@@ -83,9 +91,9 @@ public class MenuUtama extends javax.swing.JFrame {
             }
         });
 
-        btnHitung.setBackground(new java.awt.Color(0, 0, 102));
+        btnHitung.setBackground(new java.awt.Color(255, 225, 78));
         btnHitung.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        btnHitung.setForeground(new java.awt.Color(255, 255, 153));
+        btnHitung.setForeground(new java.awt.Color(25, 40, 83));
         btnHitung.setText("Hitung Rekomendasi");
         btnHitung.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,8 +101,8 @@ public class MenuUtama extends javax.swing.JFrame {
             }
         });
 
-        tabelHasil.setBackground(new java.awt.Color(0, 0, 102));
-        tabelHasil.setForeground(new java.awt.Color(255, 255, 153));
+        tabelHasil.setBackground(new java.awt.Color(13, 59, 102));
+        tabelHasil.setForeground(jPanel1.getBackground());
         tabelHasil.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -108,13 +116,13 @@ public class MenuUtama extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tabelHasil);
 
-        jLabel5.setFont(new java.awt.Font("Gill Sans Ultra Bold", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel5.setFont(new java.awt.Font("Gill Sans Ultra Bold", 1, 30)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(25, 40, 83));
         jLabel5.setText("Kuota Match");
 
-        btntambahpaket.setBackground(new java.awt.Color(0, 0, 102));
+        btntambahpaket.setBackground(btnKembali.getBackground());
         btntambahpaket.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        btntambahpaket.setForeground(new java.awt.Color(255, 255, 153));
+        btntambahpaket.setForeground(jPanel1.getBackground());
         btntambahpaket.setText("Tambah Paket Baru");
         btntambahpaket.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,13 +130,22 @@ public class MenuUtama extends javax.swing.JFrame {
             }
         });
 
-        btnkeloladata.setBackground(new java.awt.Color(0, 0, 102));
         btnkeloladata.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        btnkeloladata.setForeground(new java.awt.Color(255, 255, 153));
+        btnkeloladata.setForeground(jPanel1.getBackground());
         btnkeloladata.setText("Kelola Data");
         btnkeloladata.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnkeloladataActionPerformed(evt);
+            }
+        });
+
+        btnKembali.setBackground(new java.awt.Color(13, 59, 102));
+        btnKembali.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        btnKembali.setForeground(jPanel1.getBackground());
+        btnKembali.setText("Back");
+        btnKembali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKembaliActionPerformed(evt);
             }
         });
 
@@ -137,88 +154,109 @@ public class MenuUtama extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(105, 105, 105)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(48, 48, 48)
-                        .addComponent(txtHarga, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtMasaAktif, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel2)
-                            .addGap(48, 48, 48)
-                            .addComponent(txtKuota, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel4)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtSinyal, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(btntambahpaket, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnHitung, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnkeloladata, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(33, 33, 33)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(372, 372, 372))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3))
+                                .addGap(19, 19, 19)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btntambahpaket, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtSinyal, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                                        .addComponent(txtHarga, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                                        .addComponent(txtKuota, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                                        .addComponent(txtMasaAktif, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                                        .addComponent(btnHitung, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(btnkeloladata, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(104, 104, 104)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel5)
-                .addGap(35, 35, 35)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtHarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addGap(27, 27, 27)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtKuota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addGap(27, 27, 27)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtMasaAktif, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(txtSinyal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnHitung)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btntambahpaket))
-                            .addComponent(btnkeloladata, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51))
+                                .addComponent(jLabel5)
+                                .addGap(60, 60, 60)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel1)
+                                    .addComponent(txtHarga, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(34, 34, 34)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel2)
+                                    .addComponent(txtKuota, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(70, 70, 70))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txtMasaAktif, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel3)))
+                        .addGap(38, 38, 38)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtSinyal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addGap(43, 43, 43)
+                        .addComponent(btnHitung, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btntambahpaket, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnkeloladata, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(82, 82, 82))
         );
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel1, jLabel2, jLabel3, jLabel4, txtHarga, txtKuota, txtMasaAktif, txtSinyal});
+
+        jMenuBar1.setBackground(btnKembali.getBackground());
+        jMenuBar1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jMenuBar1.setForeground(jPanel1.getBackground());
+        jMenuBar1.setOpaque(true);
+
+        jMenu1.setText("☰");
+
+        tambah_paket_baru.setText("Tambah Paket Baru");
+        tambah_paket_baru.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tambah_paket_baruActionPerformed(evt);
+            }
+        });
+        jMenu1.add(tambah_paket_baru);
+
+        kelola_data.setText("Kelola Data");
+        kelola_data.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kelola_dataActionPerformed(evt);
+            }
+        });
+        jMenu1.add(kelola_data);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -338,6 +376,24 @@ public class MenuUtama extends javax.swing.JFrame {
         formKelola.setLocationRelativeTo(this);
     }//GEN-LAST:event_btnkeloladataActionPerformed
 
+    private void btnKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKembaliActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnKembaliActionPerformed
+
+    private void tambah_paket_baruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambah_paket_baruActionPerformed
+        // TODO add your handling code here:
+        tampilan.TambahData formTambah = new tampilan.TambahData();
+        formTambah.setVisible(true);
+        formTambah.setLocationRelativeTo(this);
+    }//GEN-LAST:event_tambah_paket_baruActionPerformed
+
+    private void kelola_dataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kelola_dataActionPerformed
+        // TODO add your handling code here:
+        tampilan.KelolaData formKelola = new tampilan.KelolaData();
+        formKelola.setVisible(true);
+        formKelola.setLocationRelativeTo(this);
+    }//GEN-LAST:event_kelola_dataActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -375,6 +431,7 @@ public class MenuUtama extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHitung;
+    private javax.swing.JButton btnKembali;
     private javax.swing.JButton btnkeloladata;
     private javax.swing.JButton btntambahpaket;
     private javax.swing.JLabel jLabel1;
@@ -382,9 +439,13 @@ public class MenuUtama extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JMenuItem kelola_data;
     private javax.swing.JTable tabelHasil;
+    private javax.swing.JMenuItem tambah_paket_baru;
     private javax.swing.JTextField txtHarga;
     private javax.swing.JTextField txtKuota;
     private javax.swing.JTextField txtMasaAktif;

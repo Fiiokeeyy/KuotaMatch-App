@@ -13,6 +13,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -26,6 +27,8 @@ public class KelolaData extends javax.swing.JFrame {
     public KelolaData() {
         initComponents();
         tampilDataMentah();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setLocationRelativeTo(null); 
     }
     
     public void tampilDataMentah() {
