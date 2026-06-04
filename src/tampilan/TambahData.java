@@ -49,6 +49,7 @@ public class TambahData extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         btnSimpan = new javax.swing.JButton();
+        btnKembali = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,6 +102,15 @@ public class TambahData extends javax.swing.JFrame {
             }
         });
 
+        btnKembali.setBackground(new java.awt.Color(13, 59, 102));
+        btnKembali.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        btnKembali.setText("Back");
+        btnKembali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKembaliActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -118,13 +128,17 @@ public class TambahData extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNamaPaket, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+                            .addComponent(txtNamaPaket, javax.swing.GroupLayout.DEFAULT_SIZE, 1146, Short.MAX_VALUE)
                             .addComponent(txtHargaPaket)
                             .addComponent(txtKuotaPaket)
                             .addComponent(txtMasaAktifPaket)
                             .addComponent(txtSinyalPaket)))
                     .addComponent(btnSimpan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(108, 108, 108)
+                .addComponent(btnKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,7 +167,9 @@ public class TambahData extends javax.swing.JFrame {
                     .addComponent(txtSinyalPaket, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSimpan)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 290, Short.MAX_VALUE)
+                .addComponent(btnKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(135, 135, 135))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -224,6 +240,14 @@ public class TambahData extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtKuotaPaketActionPerformed
 
+    private void btnKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKembaliActionPerformed
+        // TODO add your handling code here:
+        tampilan.MenuUtama formUtama = new tampilan.MenuUtama();
+        formUtama.setVisible(true);
+        
+        this.dispose();
+    }//GEN-LAST:event_btnKembaliActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -260,6 +284,7 @@ public class TambahData extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnKembali;
     private javax.swing.JButton btnSimpan;
     private javax.swing.JComboBox<String> comboProvider;
     private javax.swing.JLabel jLabel1;

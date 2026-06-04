@@ -50,12 +50,19 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" pref="375" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="btnUbah" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="btnHapus" min="-2" pref="145" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jScrollPane1" min="-2" pref="375" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="comboProvider" min="-2" pref="390" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
@@ -76,15 +83,13 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="btnUbah" min="-2" pref="200" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnHapus" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                          <Component id="btnKembali" min="-2" pref="109" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace pref="491" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -93,7 +98,8 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Component id="jScrollPane1" alignment="0" min="-2" pref="275" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
                           <Component id="comboProvider" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -120,18 +126,16 @@
                               <Component id="txtSinyalPaket" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btnUbah" max="32767" attributes="0"/>
-                              <Component id="btnHapus" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="jScrollPane1" min="-2" pref="275" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="btnUbah" pref="101" max="32767" attributes="0"/>
+                      <Component id="btnHapus" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="186" max="32767" attributes="0"/>
+                  <Component id="btnKembali" min="-2" pref="33" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -311,6 +315,20 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHapusActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnKembali">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="3b" red="d" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI Black" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Back"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKembaliActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

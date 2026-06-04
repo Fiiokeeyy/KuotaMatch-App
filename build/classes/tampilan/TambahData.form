@@ -68,7 +68,7 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtNamaPaket" pref="265" max="32767" attributes="0"/>
+                              <Component id="txtNamaPaket" pref="1146" max="32767" attributes="0"/>
                               <Component id="txtHargaPaket" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtKuotaPaket" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtMasaAktifPaket" max="32767" attributes="0"/>
@@ -78,6 +78,11 @@
                       <Component id="btnSimpan" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
+                  <Component id="btnKembali" min="-2" pref="109" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -113,7 +118,9 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="btnSimpan" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="10" max="32767" attributes="0"/>
+                  <EmptySpace pref="290" max="32767" attributes="0"/>
+                  <Component id="btnKembali" min="-2" pref="33" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -232,6 +239,20 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSimpanActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnKembali">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="3b" red="d" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI Black" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Back"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKembaliActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

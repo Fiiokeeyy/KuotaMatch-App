@@ -51,8 +51,6 @@ public class MenuUtama extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelHasil = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
-        btntambahpaket = new javax.swing.JButton();
-        btnkeloladata = new javax.swing.JButton();
         btnKembali = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -120,25 +118,6 @@ public class MenuUtama extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(25, 40, 83));
         jLabel5.setText("Kuota Match");
 
-        btntambahpaket.setBackground(btnKembali.getBackground());
-        btntambahpaket.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        btntambahpaket.setForeground(jPanel1.getBackground());
-        btntambahpaket.setText("Tambah Paket Baru");
-        btntambahpaket.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btntambahpaketActionPerformed(evt);
-            }
-        });
-
-        btnkeloladata.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        btnkeloladata.setForeground(jPanel1.getBackground());
-        btnkeloladata.setText("Kelola Data");
-        btnkeloladata.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnkeloladataActionPerformed(evt);
-            }
-        });
-
         btnKembali.setBackground(new java.awt.Color(13, 59, 102));
         btnKembali.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         btnKembali.setForeground(jPanel1.getBackground());
@@ -166,15 +145,12 @@ public class MenuUtama extends javax.swing.JFrame {
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel3))
                                 .addGap(19, 19, 19)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btntambahpaket, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtSinyal, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
-                                        .addComponent(txtHarga, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
-                                        .addComponent(txtKuota, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
-                                        .addComponent(txtMasaAktif, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
-                                        .addComponent(btnHitung, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(btnkeloladata, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtSinyal, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                                    .addComponent(txtHarga, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                                    .addComponent(txtKuota, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                                    .addComponent(txtMasaAktif, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                                    .addComponent(btnHitung, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addComponent(btnKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(104, 104, 104)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -185,7 +161,7 @@ public class MenuUtama extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(108, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(64, 64, 64)
@@ -210,10 +186,6 @@ public class MenuUtama extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addGap(43, 43, 43)
                         .addComponent(btnHitung, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btntambahpaket, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnkeloladata, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(82, 82, 82))
@@ -357,24 +329,9 @@ public class MenuUtama extends javax.swing.JFrame {
 }
     }//GEN-LAST:event_btnHitungActionPerformed
 
-    private void btntambahpaketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntambahpaketActionPerformed
-        // TODO add your handling code here:
-        // Membuka frame TambahData
-        tampilan.TambahData formTambah = new tampilan.TambahData();
-        formTambah.setVisible(true);
-        formTambah.setLocationRelativeTo(this); // Biar munculnya pas di tengah layar
-    }//GEN-LAST:event_btntambahpaketActionPerformed
-
     private void txtMasaAktifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMasaAktifActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMasaAktifActionPerformed
-
-    private void btnkeloladataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnkeloladataActionPerformed
-        // TODO add your handling code here:
-        tampilan.KelolaData formKelola = new tampilan.KelolaData();
-        formKelola.setVisible(true);
-        formKelola.setLocationRelativeTo(this);
-    }//GEN-LAST:event_btnkeloladataActionPerformed
 
     private void btnKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKembaliActionPerformed
         // TODO add your handling code here:
@@ -384,14 +341,16 @@ public class MenuUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
         tampilan.TambahData formTambah = new tampilan.TambahData();
         formTambah.setVisible(true);
-        formTambah.setLocationRelativeTo(this);
+        
+        this.dispose();
     }//GEN-LAST:event_tambah_paket_baruActionPerformed
 
     private void kelola_dataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kelola_dataActionPerformed
         // TODO add your handling code here:
         tampilan.KelolaData formKelola = new tampilan.KelolaData();
         formKelola.setVisible(true);
-        formKelola.setLocationRelativeTo(this);
+        
+        this.dispose();
     }//GEN-LAST:event_kelola_dataActionPerformed
 
     /**
@@ -432,8 +391,6 @@ public class MenuUtama extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHitung;
     private javax.swing.JButton btnKembali;
-    private javax.swing.JButton btnkeloladata;
-    private javax.swing.JButton btntambahpaket;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
