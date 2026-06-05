@@ -50,16 +50,17 @@ public class TambahData extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         btnSimpan = new javax.swing.JButton();
         btnKembali = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel1.setBackground(new java.awt.Color(239, 248, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 153));
 
-        comboProvider.setBackground(new java.awt.Color(0, 0, 102));
+        comboProvider.setEditable(true);
         comboProvider.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        comboProvider.setForeground(new java.awt.Color(255, 255, 153));
-        comboProvider.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Provider:", "Telkomsel", "Indosat", "Im3", "XL", "By.U", " " }));
+        comboProvider.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Telkomsel", "IM3", "Tri", "XL", "By.U", " " }));
+        comboProvider.setSelectedIndex(-1);
         comboProvider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboProviderActionPerformed(evt);
@@ -94,7 +95,7 @@ public class TambahData extends javax.swing.JFrame {
 
         btnSimpan.setBackground(new java.awt.Color(0, 0, 102));
         btnSimpan.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        btnSimpan.setForeground(new java.awt.Color(255, 255, 153));
+        btnSimpan.setForeground(new java.awt.Color(239, 248, 255));
         btnSimpan.setText("Simpan Data");
         btnSimpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,6 +105,7 @@ public class TambahData extends javax.swing.JFrame {
 
         btnKembali.setBackground(new java.awt.Color(13, 59, 102));
         btnKembali.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        btnKembali.setForeground(new java.awt.Color(239, 248, 255));
         btnKembali.setText("Back");
         btnKembali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,40 +113,49 @@ public class TambahData extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel6.setText("Provider");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(74, 74, 74)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(comboProvider, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNamaPaket, javax.swing.GroupLayout.DEFAULT_SIZE, 1146, Short.MAX_VALUE)
-                            .addComponent(txtHargaPaket)
-                            .addComponent(txtKuotaPaket)
-                            .addComponent(txtMasaAktifPaket)
-                            .addComponent(txtSinyalPaket)))
-                    .addComponent(btnSimpan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtNamaPaket)
+                    .addComponent(txtHargaPaket)
+                    .addComponent(txtKuotaPaket)
+                    .addComponent(txtMasaAktifPaket)
+                    .addComponent(txtSinyalPaket))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(108, 108, 108)
-                .addComponent(btnKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(108, 108, 108)
+                        .addComponent(btnKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(318, 318, 318)
+                        .addComponent(btnSimpan)))
+                .addContainerGap(853, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(comboProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(71, 71, 71)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNamaPaket, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -165,9 +176,9 @@ public class TambahData extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtSinyalPaket, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
                 .addComponent(btnSimpan)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 290, Short.MAX_VALUE)
+                .addGap(131, 131, 131)
                 .addComponent(btnKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(135, 135, 135))
         );
@@ -176,25 +187,23 @@ public class TambahData extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void comboProviderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProviderActionPerformed
+    private void btnKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKembaliActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_comboProviderActionPerformed
+        tampilan.MenuUtama formUtama = new tampilan.MenuUtama();
+        formUtama.setVisible(true);
+
+        this.dispose();
+    }//GEN-LAST:event_btnKembaliActionPerformed
 
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
         // TODO add your handling code here:
@@ -227,7 +236,7 @@ public class TambahData extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Mantap! Data Paket Baru Berhasil Ditambahkan.");
 
                 // Opsi: Tutup jendela ini setelah selesai menyimpan
-                this.dispose(); 
+                this.dispose();
             }
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Periksa lagi! Harga, Kuota, Masa Aktif, dan Sinyal harus diisi dengan angka.");
@@ -240,13 +249,9 @@ public class TambahData extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtKuotaPaketActionPerformed
 
-    private void btnKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKembaliActionPerformed
+    private void comboProviderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProviderActionPerformed
         // TODO add your handling code here:
-        tampilan.MenuUtama formUtama = new tampilan.MenuUtama();
-        formUtama.setVisible(true);
-        
-        this.dispose();
-    }//GEN-LAST:event_btnKembaliActionPerformed
+    }//GEN-LAST:event_comboProviderActionPerformed
 
     /**
      * @param args the command line arguments
@@ -292,6 +297,7 @@ public class TambahData extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtHargaPaket;
     private javax.swing.JTextField txtKuotaPaket;
