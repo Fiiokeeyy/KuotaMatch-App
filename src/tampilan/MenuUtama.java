@@ -27,6 +27,16 @@ public class MenuUtama extends javax.swing.JFrame {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setLocationRelativeTo(null); 
+        
+
+        jMenuBar1.setUI(new javax.swing.plaf.basic.BasicMenuBarUI());
+        jMenuBar1.setBackground(new java.awt.Color(30, 36, 69));
+
+        tambah_paket_baru.setBackground(new java.awt.Color(30,36,69));
+        tambah_paket_baru.setForeground(new java.awt.Color(255,225,78));
+
+        kelola_data.setBackground(new java.awt.Color(30,36,69));
+        kelola_data.setForeground(new java.awt.Color(255,225,78));
     }
 
     /**
@@ -48,10 +58,10 @@ public class MenuUtama extends javax.swing.JFrame {
         txtMasaAktif = new javax.swing.JTextField();
         txtSinyal = new javax.swing.JTextField();
         btnHitung = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelHasil = new javax.swing.JTable();
-        jLabel5 = new javax.swing.JLabel();
-        btnKembali = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         tambah_paket_baru = new javax.swing.JMenuItem();
@@ -62,27 +72,66 @@ public class MenuUtama extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(239, 248, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 16)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel1.setForeground(new java.awt.Color(30, 36, 69));
         jLabel1.setText("Bobot Harga (%)");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel2.setForeground(new java.awt.Color(30, 36, 69));
         jLabel2.setText("Bobot Kuota (%)");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel3.setForeground(new java.awt.Color(30, 36, 69));
         jLabel3.setText("Bobot Masa Aktif (%)");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Black", 1, 16)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel4.setForeground(new java.awt.Color(30, 36, 69));
         jLabel4.setText("Bobot Sinyal (%)");
 
+        txtHarga.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtHargaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtHargaMouseExited(evt);
+            }
+        });
+        txtHarga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtHargaActionPerformed(evt);
+            }
+        });
+
+        txtKuota.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtKuotaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtKuotaMouseExited(evt);
+            }
+        });
+
+        txtMasaAktif.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtMasaAktifMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtMasaAktifMouseExited(evt);
+            }
+        });
         txtMasaAktif.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMasaAktifActionPerformed(evt);
             }
         });
 
+        txtSinyal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtSinyalMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtSinyalMouseExited(evt);
+            }
+        });
         txtSinyal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSinyalActionPerformed(evt);
@@ -91,16 +140,30 @@ public class MenuUtama extends javax.swing.JFrame {
 
         btnHitung.setBackground(new java.awt.Color(255, 225, 78));
         btnHitung.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        btnHitung.setForeground(new java.awt.Color(25, 40, 83));
+        btnHitung.setForeground(new java.awt.Color(30, 36, 39));
         btnHitung.setText("Hitung Rekomendasi");
+        btnHitung.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnHitungMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnHitungMouseExited(evt);
+            }
+        });
         btnHitung.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHitungActionPerformed(evt);
             }
         });
 
-        tabelHasil.setBackground(new java.awt.Color(13, 59, 102));
-        tabelHasil.setForeground(jPanel1.getBackground());
+        jLabel5.setFont(new java.awt.Font("Gill Sans Ultra Bold", 1, 30)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(30, 36, 69));
+        jLabel5.setText("Kuota Match");
+
+        jPanel2.setBackground(new java.awt.Color(44, 54, 90));
+
+        tabelHasil.setBackground(new java.awt.Color(239, 248, 255));
+        tabelHasil.setForeground(new java.awt.Color(0, 0, 102));
         tabelHasil.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -114,93 +177,113 @@ public class MenuUtama extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tabelHasil);
 
-        jLabel5.setFont(new java.awt.Font("Gill Sans Ultra Bold", 1, 30)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(25, 40, 83));
-        jLabel5.setText("Kuota Match");
-
-        btnKembali.setBackground(new java.awt.Color(13, 59, 102));
-        btnKembali.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        btnKembali.setForeground(jPanel1.getBackground());
-        btnKembali.setText("Back");
-        btnKembali.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnKembaliActionPerformed(evt);
-            }
-        });
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(94, 94, 94)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(91, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(83, 83, 83)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(83, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(105, 105, 105)
+                .addGap(92, 92, 92)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel3))
-                                .addGap(19, 19, 19)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtSinyal, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
-                                    .addComponent(txtHarga, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
-                                    .addComponent(txtKuota, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
-                                    .addComponent(txtMasaAktif, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
-                                    .addComponent(btnHitung, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(btnKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(104, 104, 104)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(111, Short.MAX_VALUE))
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3))
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnHitung, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtSinyal)
+                                .addComponent(txtHarga)
+                                .addComponent(txtKuota)
+                                .addComponent(txtMasaAktif, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(108, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(60, 60, 60)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel1)
-                                    .addComponent(txtHarga, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(34, 34, 34)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel2)
-                                    .addComponent(txtKuota, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(70, 70, 70))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtMasaAktif, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3)))
-                        .addGap(38, 38, 38)
+                        .addComponent(jLabel5)
+                        .addGap(60, 60, 60)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtSinyal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addGap(43, 43, 43)
-                        .addComponent(btnHitung, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(82, 82, 82))
+                            .addComponent(jLabel1)
+                            .addComponent(txtHarga, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(txtKuota, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(70, 70, 70))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtMasaAktif, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel3)))
+                .addGap(38, 38, 38)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtSinyal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(48, 48, 48)
+                .addComponent(btnHitung, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(137, 137, 137))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel1, jLabel2, jLabel3, jLabel4, txtHarga, txtKuota, txtMasaAktif, txtSinyal});
 
-        jMenuBar1.setBackground(btnKembali.getBackground());
+        jMenuBar1.setBackground(new java.awt.Color(239, 248, 255));
         jMenuBar1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jMenuBar1.setForeground(jPanel1.getBackground());
+        jMenuBar1.setForeground(new java.awt.Color(255, 255, 255));
         jMenuBar1.setOpaque(true);
 
+        jMenu1.setBackground(new java.awt.Color(30, 36, 69));
+        jMenu1.setForeground(new java.awt.Color(239, 248, 255));
         jMenu1.setText("☰");
+        jMenu1.setOpaque(true);
+        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jMenu1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jMenu1MouseExited(evt);
+            }
+        });
 
+        tambah_paket_baru.setBackground(new java.awt.Color(0, 0, 102));
+        tambah_paket_baru.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        tambah_paket_baru.setForeground(new java.awt.Color(239, 248, 255));
         tambah_paket_baru.setText("Tambah Paket Baru");
+        tambah_paket_baru.setOpaque(true);
+        tambah_paket_baru.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tambah_paket_baruMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                tambah_paket_baruMouseExited(evt);
+            }
+        });
         tambah_paket_baru.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tambah_paket_baruActionPerformed(evt);
@@ -208,7 +291,19 @@ public class MenuUtama extends javax.swing.JFrame {
         });
         jMenu1.add(tambah_paket_baru);
 
+        kelola_data.setBackground(new java.awt.Color(0, 0, 102));
+        kelola_data.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        kelola_data.setForeground(new java.awt.Color(239, 248, 255));
         kelola_data.setText("Kelola Data");
+        kelola_data.setOpaque(true);
+        kelola_data.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                kelola_dataMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                kelola_dataMouseExited(evt);
+            }
+        });
         kelola_data.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 kelola_dataActionPerformed(evt);
@@ -333,25 +428,124 @@ public class MenuUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMasaAktifActionPerformed
 
-    private void btnKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKembaliActionPerformed
+    private void txtHargaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtHargaMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnKembaliActionPerformed
+        txtHarga.setBackground(new java.awt.Color(44,54,90));
+        txtHarga.setForeground(new java.awt.Color(239,248,255));
+    }//GEN-LAST:event_txtHargaMouseEntered
 
-    private void tambah_paket_baruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambah_paket_baruActionPerformed
+    private void txtKuotaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtKuotaMouseEntered
         // TODO add your handling code here:
-        tampilan.TambahData formTambah = new tampilan.TambahData();
-        formTambah.setVisible(true);
-        
-        this.dispose();
-    }//GEN-LAST:event_tambah_paket_baruActionPerformed
+        txtKuota.setBackground(new java.awt.Color(44,54,90));
+        txtKuota.setForeground(new java.awt.Color(239,248,255));
+    }//GEN-LAST:event_txtKuotaMouseEntered
+
+    private void txtMasaAktifMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtMasaAktifMouseEntered
+        // TODO add your handling code here:
+        txtMasaAktif.setBackground(new java.awt.Color(44,54,90));
+        txtMasaAktif.setForeground(new java.awt.Color(239,248,255));
+    }//GEN-LAST:event_txtMasaAktifMouseEntered
+
+    private void txtSinyalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSinyalMouseEntered
+        // TODO add your handling code here:
+        txtSinyal.setBackground(new java.awt.Color(44,54,90));
+        txtSinyal.setForeground(new java.awt.Color(239,248,255));
+    }//GEN-LAST:event_txtSinyalMouseEntered
+
+    private void txtHargaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtHargaMouseExited
+        // TODO add your handling code here:
+        txtHarga.setBackground(new java.awt.Color(239,248,255));
+        txtHarga.setForeground(new java.awt.Color(30,36,39));
+    }//GEN-LAST:event_txtHargaMouseExited
+
+    private void txtKuotaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtKuotaMouseExited
+        // TODO add your handling code here:
+        txtKuota.setBackground(new java.awt.Color(239,248,255));
+        txtKuota.setForeground(new java.awt.Color(30,36,69));
+    }//GEN-LAST:event_txtKuotaMouseExited
+
+    private void txtMasaAktifMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtMasaAktifMouseExited
+        // TODO add your handling code here:
+        txtMasaAktif.setBackground(new java.awt.Color(239,248,255));
+        txtMasaAktif.setForeground(new java.awt.Color(30,36,69));
+    }//GEN-LAST:event_txtMasaAktifMouseExited
+
+    private void txtSinyalMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSinyalMouseExited
+        // TODO add your handling code here:
+        txtSinyal.setBackground(new java.awt.Color(239,248,255));
+        txtSinyal.setForeground(new java.awt.Color(30,36,69));
+    }//GEN-LAST:event_txtSinyalMouseExited
+
+    private void btnHitungMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHitungMouseEntered
+        // TODO add your handling code here:
+        btnHitung.setBackground(new java.awt.Color(30,36,69));
+        btnHitung.setForeground(new java.awt.Color(255,225,78));
+    }//GEN-LAST:event_btnHitungMouseEntered
+
+    private void btnHitungMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHitungMouseExited
+        // TODO add your handling code here:
+        btnHitung.setBackground(new java.awt.Color(255,225,78));
+        btnHitung.setForeground(new java.awt.Color(30,36,69));
+    }//GEN-LAST:event_btnHitungMouseExited
+
+    private void jMenu1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseExited
+        // TODO add your handling code here:
+        jMenu1.setForeground(new java.awt.Color(239,248,255));
+    }//GEN-LAST:event_jMenu1MouseExited
+
+    private void jMenu1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseEntered
+        // TODO add your handling code here:
+        jMenu1.setForeground(new java.awt.Color(255,225,78));
+    }//GEN-LAST:event_jMenu1MouseEntered
+
+    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
+        jMenu1.setBackground(new java.awt.Color(239,248,255));
+        jMenu1.setBackground(new java.awt.Color(0, 0, 102));
+    }//GEN-LAST:event_jMenu1MouseClicked
 
     private void kelola_dataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kelola_dataActionPerformed
         // TODO add your handling code here:
         tampilan.KelolaData formKelola = new tampilan.KelolaData();
         formKelola.setVisible(true);
-        
+
         this.dispose();
     }//GEN-LAST:event_kelola_dataActionPerformed
+
+    private void kelola_dataMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kelola_dataMouseExited
+        // TODO add your handling code here:
+        kelola_data.setBackground(new java.awt.Color(30,36,69));
+        kelola_data.setForeground(new java.awt.Color(255,225,78));
+    }//GEN-LAST:event_kelola_dataMouseExited
+
+    private void kelola_dataMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kelola_dataMouseEntered
+        // TODO add your handling code here:
+        kelola_data.setBackground(new java.awt.Color(255,225,78));
+        kelola_data.setForeground(new java.awt.Color(239,248,255));
+    }//GEN-LAST:event_kelola_dataMouseEntered
+
+    private void tambah_paket_baruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambah_paket_baruActionPerformed
+        // TODO add your handling code here:
+        tampilan.TambahData formTambah = new tampilan.TambahData();
+        formTambah.setVisible(true);
+
+        this.dispose();
+    }//GEN-LAST:event_tambah_paket_baruActionPerformed
+
+    private void tambah_paket_baruMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tambah_paket_baruMouseExited
+        // TODO add your handling code here:
+        tambah_paket_baru.setBackground(new java.awt.Color(30,36,69));
+        tambah_paket_baru.setForeground(new java.awt.Color(255,225,78));
+    }//GEN-LAST:event_tambah_paket_baruMouseExited
+
+    private void tambah_paket_baruMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tambah_paket_baruMouseEntered
+        // TODO add your handling code here:
+        tambah_paket_baru.setBackground(new java.awt.Color(255,225,78));
+        tambah_paket_baru.setForeground(new java.awt.Color(239,248,255));
+    }//GEN-LAST:event_tambah_paket_baruMouseEntered
+
+    private void txtHargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHargaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtHargaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -390,7 +584,6 @@ public class MenuUtama extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHitung;
-    private javax.swing.JButton btnKembali;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -399,6 +592,7 @@ public class MenuUtama extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuItem kelola_data;
     private javax.swing.JTable tabelHasil;
