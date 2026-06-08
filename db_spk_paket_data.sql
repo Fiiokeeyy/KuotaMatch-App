@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 04 Jun 2026 pada 06.48
--- Versi server: 10.4.32-MariaDB
--- Versi PHP: 8.2.12
+-- Host: localhost:3306
+-- Generation Time: Jun 08, 2026 at 12:29 PM
+-- Server version: 8.4.3
+-- PHP Version: 8.3.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,21 +24,22 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `paket_data`
+-- Table structure for table `paket_data`
 --
 
+DROP TABLE IF EXISTS `paket_data`;
 CREATE TABLE `paket_data` (
-  `id_paket` int(11) NOT NULL,
-  `id_provider` int(11) NOT NULL,
-  `nama_paket` varchar(100) NOT NULL,
-  `harga` int(11) NOT NULL,
-  `kuota_gb` int(11) NOT NULL,
-  `masa_aktif_hari` int(11) NOT NULL,
-  `skor_sinyal` int(11) NOT NULL
+  `id_paket` int NOT NULL,
+  `id_provider` int NOT NULL,
+  `nama_paket` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `harga` int NOT NULL,
+  `kuota_gb` int NOT NULL,
+  `masa_aktif_hari` int NOT NULL,
+  `skor_sinyal` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `paket_data`
+-- Dumping data for table `paket_data`
 --
 
 INSERT INTO `paket_data` (`id_paket`, `id_provider`, `nama_paket`, `harga`, `kuota_gb`, `masa_aktif_hari`, `skor_sinyal`) VALUES
@@ -48,27 +49,30 @@ INSERT INTO `paket_data` (`id_paket`, `id_provider`, `nama_paket`, `harga`, `kuo
 (4, 4, 'Xtra Combo Flex 40GB', 85000, 40, 30, 4),
 (5, 5, 'Yang Bikin Nyaman 10GB', 35000, 10, 14, 5),
 (6, 1, 'Internet OMG! 15GB', 65000, 15, 30, 5),
-(7, 2, 'Yellow 1GB', 5000, 1, 1, 4);
+(7, 2, 'Yellow 1GB', 5000, 1, 1, 4),
+(10, 3, 'Happy Spesial', 99000, 60, 30, 3),
+(11, 4, 'Xtra Combo Plus VIP', 100000, 26, 30, 3);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `provider`
+-- Table structure for table `provider`
 --
 
+DROP TABLE IF EXISTS `provider`;
 CREATE TABLE `provider` (
-  `id_provider` int(11) NOT NULL,
-  `nama_provider` varchar(50) NOT NULL
+  `id_provider` int NOT NULL,
+  `nama_provider` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `provider`
+-- Dumping data for table `provider`
 --
 
 INSERT INTO `provider` (`id_provider`, `nama_provider`) VALUES
 (1, 'Telkomsel'),
-(2, 'Indosat'),
-(3, 'Im3'),
+(2, 'IM3'),
+(3, 'Tri'),
 (4, 'XL'),
 (5, 'By.U');
 
@@ -77,40 +81,40 @@ INSERT INTO `provider` (`id_provider`, `nama_provider`) VALUES
 --
 
 --
--- Indeks untuk tabel `paket_data`
+-- Indexes for table `paket_data`
 --
 ALTER TABLE `paket_data`
   ADD PRIMARY KEY (`id_paket`),
   ADD KEY `id_provider` (`id_provider`);
 
 --
--- Indeks untuk tabel `provider`
+-- Indexes for table `provider`
 --
 ALTER TABLE `provider`
   ADD PRIMARY KEY (`id_provider`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `paket_data`
+-- AUTO_INCREMENT for table `paket_data`
 --
 ALTER TABLE `paket_data`
-  MODIFY `id_paket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_paket` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT untuk tabel `provider`
+-- AUTO_INCREMENT for table `provider`
 --
 ALTER TABLE `provider`
-  MODIFY `id_provider` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_provider` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `paket_data`
+-- Constraints for table `paket_data`
 --
 ALTER TABLE `paket_data`
   ADD CONSTRAINT `paket_data_ibfk_1` FOREIGN KEY (`id_provider`) REFERENCES `provider` (`id_provider`) ON DELETE CASCADE ON UPDATE CASCADE;
