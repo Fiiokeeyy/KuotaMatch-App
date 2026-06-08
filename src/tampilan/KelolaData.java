@@ -105,6 +105,14 @@ public class KelolaData extends javax.swing.JFrame {
         comboProvider.setForeground(new java.awt.Color(239, 248, 255));
         comboProvider.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Provider:", "Telkomsel", "Indosat", "Im3", "XL", "By.U" }));
         comboProvider.setSelectedIndex(-1);
+        comboProvider.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                comboProviderMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                comboProviderMouseExited(evt);
+            }
+        });
         comboProvider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboProviderActionPerformed(evt);
@@ -205,6 +213,14 @@ public class KelolaData extends javax.swing.JFrame {
         btnUbah.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         btnUbah.setForeground(new java.awt.Color(44, 54, 90));
         btnUbah.setText("Ubah Data");
+        btnUbah.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnUbahMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnUbahMouseExited(evt);
+            }
+        });
         btnUbah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUbahActionPerformed(evt);
@@ -215,6 +231,14 @@ public class KelolaData extends javax.swing.JFrame {
         btnHapus.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         btnHapus.setForeground(new java.awt.Color(44, 54, 90));
         btnHapus.setText("Hapus Data");
+        btnHapus.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnHapusMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnHapusMouseExited(evt);
+            }
+        });
         btnHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHapusActionPerformed(evt);
@@ -225,6 +249,14 @@ public class KelolaData extends javax.swing.JFrame {
         btnKembali.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         btnKembali.setForeground(new java.awt.Color(239, 248, 255));
         btnKembali.setText("Back");
+        btnKembali.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnKembaliMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnKembaliMouseExited(evt);
+            }
+        });
         btnKembali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnKembaliActionPerformed(evt);
@@ -537,6 +569,50 @@ public class KelolaData extends javax.swing.JFrame {
         txtSinyalPaket.setBackground(new java.awt.Color(239,248,255));
         txtSinyalPaket.setForeground(new java.awt.Color(30,36,39));
     }//GEN-LAST:event_txtSinyalPaketMouseExited
+
+    private void btnUbahMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUbahMouseEntered
+        // TODO add your handling code here:
+        btnUbah.setBackground(new java.awt.Color(30,36,69));
+        btnUbah.setForeground(new java.awt.Color(255,225,78));
+    }//GEN-LAST:event_btnUbahMouseEntered
+
+    private void btnUbahMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUbahMouseExited
+        // TODO add your handling code here:
+        btnUbah.setBackground(new java.awt.Color(255,225,78));
+        btnUbah.setForeground(new java.awt.Color(30,36,69));
+    }//GEN-LAST:event_btnUbahMouseExited
+
+    private void btnHapusMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHapusMouseEntered
+        // TODO add your handling code here:
+        btnHapus.setBackground(new java.awt.Color(30,36,69));
+        btnHapus.setForeground(new java.awt.Color(255,225,78));
+    }//GEN-LAST:event_btnHapusMouseEntered
+
+    private void btnHapusMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHapusMouseExited
+        // TODO add your handling code here:
+        btnHapus.setBackground(new java.awt.Color(255,225,78));
+        btnHapus.setForeground(new java.awt.Color(30,36,69));
+    }//GEN-LAST:event_btnHapusMouseExited
+
+    private void btnKembaliMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKembaliMouseEntered
+        // TODO add your handling code here:
+        btnKembali.setBackground(new java.awt.Color(239,248,255));
+        btnKembali.setForeground(new java.awt.Color(44,54,90));
+    }//GEN-LAST:event_btnKembaliMouseEntered
+
+    private void btnKembaliMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKembaliMouseExited
+        // TODO add your handling code here:
+        btnKembali.setBackground(new java.awt.Color(44,54,90));
+        btnKembali.setForeground(new java.awt.Color(239,248,255));
+    }//GEN-LAST:event_btnKembaliMouseExited
+
+    private void comboProviderMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboProviderMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboProviderMouseEntered
+
+    private void comboProviderMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboProviderMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboProviderMouseExited
 
     /**
      * @param args the command line arguments
