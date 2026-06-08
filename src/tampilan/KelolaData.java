@@ -100,6 +100,7 @@ public class KelolaData extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(239, 248, 255));
 
         comboProvider.setBackground(new java.awt.Color(44, 54, 90));
+        comboProvider.setEditable(true);
         comboProvider.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         comboProvider.setForeground(new java.awt.Color(239, 248, 255));
         comboProvider.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Provider:", "Telkomsel", "Indosat", "Im3", "XL", "By.U" }));
@@ -130,30 +131,70 @@ public class KelolaData extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(30, 36, 69));
         jLabel5.setText("Skor Sinyal 1-5");
 
+        txtNamaPaket.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtNamaPaketMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtNamaPaketMouseExited(evt);
+            }
+        });
         txtNamaPaket.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNamaPaketActionPerformed(evt);
             }
         });
 
+        txtHargaPaket.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtHargaPaketMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtHargaPaketMouseExited(evt);
+            }
+        });
         txtHargaPaket.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtHargaPaketActionPerformed(evt);
             }
         });
 
+        txtKuotaPaket.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtKuotaPaketMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtKuotaPaketMouseExited(evt);
+            }
+        });
         txtKuotaPaket.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtKuotaPaketActionPerformed(evt);
             }
         });
 
+        txtMasaAktifPaket.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtMasaAktifPaketMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtMasaAktifPaketMouseExited(evt);
+            }
+        });
         txtMasaAktifPaket.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMasaAktifPaketActionPerformed(evt);
             }
         });
 
+        txtSinyalPaket.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtSinyalPaketMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtSinyalPaketMouseExited(evt);
+            }
+        });
         txtSinyalPaket.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSinyalPaketActionPerformed(evt);
@@ -182,6 +223,7 @@ public class KelolaData extends javax.swing.JFrame {
 
         btnKembali.setBackground(new java.awt.Color(44, 54, 90));
         btnKembali.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        btnKembali.setForeground(new java.awt.Color(239, 248, 255));
         btnKembali.setText("Back");
         btnKembali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,9 +266,9 @@ public class KelolaData extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(85, Short.MAX_VALUE)
+                .addContainerGap(94, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 555, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80))
+                .addGap(71, 71, 71))
         );
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Black", 1, 16)); // NOI18N
@@ -435,6 +477,66 @@ public class KelolaData extends javax.swing.JFrame {
             txtSinyalPaket.setText(tabelPaket.getValueAt(baris, 6).toString());
         }
     }//GEN-LAST:event_tabelPaketMouseClicked
+
+    private void txtNamaPaketMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNamaPaketMouseEntered
+        // TODO add your handling code here:
+        txtNamaPaket.setBackground(new java.awt.Color(44,54,90));
+        txtNamaPaket.setForeground(new java.awt.Color(239,248,255));
+    }//GEN-LAST:event_txtNamaPaketMouseEntered
+
+    private void txtNamaPaketMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNamaPaketMouseExited
+        // TODO add your handling code here:
+        txtNamaPaket.setBackground(new java.awt.Color(239,248,255));
+        txtNamaPaket.setForeground(new java.awt.Color(30,36,39));
+    }//GEN-LAST:event_txtNamaPaketMouseExited
+
+    private void txtHargaPaketMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtHargaPaketMouseEntered
+        // TODO add your handling code here:
+        txtHargaPaket.setBackground(new java.awt.Color(44,54,90));
+        txtHargaPaket.setForeground(new java.awt.Color(239,248,255));
+    }//GEN-LAST:event_txtHargaPaketMouseEntered
+
+    private void txtHargaPaketMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtHargaPaketMouseExited
+        // TODO add your handling code here:
+        txtHargaPaket.setBackground(new java.awt.Color(239,248,255));
+        txtHargaPaket.setForeground(new java.awt.Color(30,36,39));
+    }//GEN-LAST:event_txtHargaPaketMouseExited
+
+    private void txtKuotaPaketMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtKuotaPaketMouseEntered
+        // TODO add your handling code here:
+        txtKuotaPaket.setBackground(new java.awt.Color(44,54,90));
+        txtKuotaPaket.setForeground(new java.awt.Color(239,248,255));
+    }//GEN-LAST:event_txtKuotaPaketMouseEntered
+
+    private void txtKuotaPaketMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtKuotaPaketMouseExited
+        // TODO add your handling code here:
+        txtKuotaPaket.setBackground(new java.awt.Color(239,248,255));
+        txtKuotaPaket.setForeground(new java.awt.Color(30,36,39));
+    }//GEN-LAST:event_txtKuotaPaketMouseExited
+
+    private void txtMasaAktifPaketMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtMasaAktifPaketMouseEntered
+        // TODO add your handling code here:
+        txtMasaAktifPaket.setBackground(new java.awt.Color(44,54,90));
+        txtMasaAktifPaket.setForeground(new java.awt.Color(239,248,255));
+    }//GEN-LAST:event_txtMasaAktifPaketMouseEntered
+
+    private void txtMasaAktifPaketMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtMasaAktifPaketMouseExited
+        // TODO add your handling code here:
+        txtMasaAktifPaket.setBackground(new java.awt.Color(239,248,255));
+        txtMasaAktifPaket.setForeground(new java.awt.Color(30,36,39));
+    }//GEN-LAST:event_txtMasaAktifPaketMouseExited
+
+    private void txtSinyalPaketMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSinyalPaketMouseEntered
+        // TODO add your handling code here:
+        txtSinyalPaket.setBackground(new java.awt.Color(44,54,90));
+        txtSinyalPaket.setForeground(new java.awt.Color(239,248,255));
+    }//GEN-LAST:event_txtSinyalPaketMouseEntered
+
+    private void txtSinyalPaketMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSinyalPaketMouseExited
+        // TODO add your handling code here:
+        txtSinyalPaket.setBackground(new java.awt.Color(239,248,255));
+        txtSinyalPaket.setForeground(new java.awt.Color(30,36,39));
+    }//GEN-LAST:event_txtSinyalPaketMouseExited
 
     /**
      * @param args the command line arguments
