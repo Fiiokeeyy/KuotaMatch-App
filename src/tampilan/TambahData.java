@@ -71,9 +71,53 @@ public class TambahData extends javax.swing.JFrame {
             }
         });
 
+        txtNamaPaket.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtNamaPaketMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtNamaPaketMouseExited(evt);
+            }
+        });
+
+        txtHargaPaket.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtHargaPaketMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtHargaPaketMouseExited(evt);
+            }
+        });
+
+        txtKuotaPaket.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtKuotaPaketMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtKuotaPaketMouseExited(evt);
+            }
+        });
         txtKuotaPaket.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtKuotaPaketActionPerformed(evt);
+            }
+        });
+
+        txtMasaAktifPaket.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtMasaAktifPaketMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtMasaAktifPaketMouseExited(evt);
+            }
+        });
+
+        txtSinyalPaket.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtSinyalPaketMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtSinyalPaketMouseExited(evt);
             }
         });
 
@@ -101,6 +145,14 @@ public class TambahData extends javax.swing.JFrame {
         btnSimpan.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         btnSimpan.setForeground(new java.awt.Color(44, 54, 90));
         btnSimpan.setText("Simpan Data");
+        btnSimpan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSimpanMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSimpanMouseExited(evt);
+            }
+        });
         btnSimpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSimpanActionPerformed(evt);
@@ -111,6 +163,14 @@ public class TambahData extends javax.swing.JFrame {
         btnKembali.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         btnKembali.setForeground(new java.awt.Color(239, 248, 255));
         btnKembali.setText("Back");
+        btnKembali.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnKembaliMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnKembaliMouseExited(evt);
+            }
+        });
         btnKembali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnKembaliActionPerformed(evt);
@@ -136,7 +196,7 @@ public class TambahData extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Gill Sans Ultra Bold", 1, 30)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(30, 36, 69));
-        jLabel7.setText("Kelola Data");
+        jLabel7.setText("Tambah Data");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -275,6 +335,90 @@ public class TambahData extends javax.swing.JFrame {
     private void comboProviderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProviderActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_comboProviderActionPerformed
+
+    private void txtNamaPaketMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNamaPaketMouseEntered
+        // TODO add your handling code here:
+        txtNamaPaket.setBackground(new java.awt.Color(44,54,90));
+        txtNamaPaket.setForeground(new java.awt.Color(239,248,255));
+    }//GEN-LAST:event_txtNamaPaketMouseEntered
+
+    private void txtNamaPaketMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNamaPaketMouseExited
+        // TODO add your handling code here:
+        txtNamaPaket.setBackground(new java.awt.Color(239,248,255));
+        txtNamaPaket.setForeground(new java.awt.Color(30,36,39));
+    }//GEN-LAST:event_txtNamaPaketMouseExited
+
+    private void txtHargaPaketMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtHargaPaketMouseEntered
+        // TODO add your handling code here:
+        txtHargaPaket.setBackground(new java.awt.Color(44,54,90));
+        txtHargaPaket.setForeground(new java.awt.Color(239,248,255));
+    }//GEN-LAST:event_txtHargaPaketMouseEntered
+
+    private void txtHargaPaketMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtHargaPaketMouseExited
+        // TODO add your handling code here:
+        txtHargaPaket.setBackground(new java.awt.Color(239,248,255));
+        txtHargaPaket.setForeground(new java.awt.Color(30,36,39));
+    }//GEN-LAST:event_txtHargaPaketMouseExited
+
+    private void txtKuotaPaketMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtKuotaPaketMouseEntered
+        // TODO add your handling code here:
+        txtKuotaPaket.setBackground(new java.awt.Color(44,54,90));
+        txtKuotaPaket.setForeground(new java.awt.Color(239,248,255));
+    }//GEN-LAST:event_txtKuotaPaketMouseEntered
+
+    private void txtKuotaPaketMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtKuotaPaketMouseExited
+        // TODO add your handling code here:
+        txtKuotaPaket.setBackground(new java.awt.Color(239,248,255));
+        txtKuotaPaket.setForeground(new java.awt.Color(30,36,39));
+    }//GEN-LAST:event_txtKuotaPaketMouseExited
+
+    private void txtMasaAktifPaketMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtMasaAktifPaketMouseEntered
+        // TODO add your handling code here:
+        txtMasaAktifPaket.setBackground(new java.awt.Color(44,54,90));
+        txtMasaAktifPaket.setForeground(new java.awt.Color(239,248,255));
+    }//GEN-LAST:event_txtMasaAktifPaketMouseEntered
+
+    private void txtMasaAktifPaketMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtMasaAktifPaketMouseExited
+        // TODO add your handling code here:
+        txtMasaAktifPaket.setBackground(new java.awt.Color(239,248,255));
+        txtMasaAktifPaket.setForeground(new java.awt.Color(30,36,39));
+    }//GEN-LAST:event_txtMasaAktifPaketMouseExited
+
+    private void txtSinyalPaketMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSinyalPaketMouseEntered
+        // TODO add your handling code here:
+        txtSinyalPaket.setBackground(new java.awt.Color(44,54,90));
+        txtSinyalPaket.setForeground(new java.awt.Color(239,248,255));
+    }//GEN-LAST:event_txtSinyalPaketMouseEntered
+
+    private void txtSinyalPaketMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSinyalPaketMouseExited
+        // TODO add your handling code here:
+        txtSinyalPaket.setBackground(new java.awt.Color(239,248,255));
+        txtSinyalPaket.setForeground(new java.awt.Color(30,36,39));
+    }//GEN-LAST:event_txtSinyalPaketMouseExited
+
+    private void btnSimpanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSimpanMouseEntered
+        // TODO add your handling code here:
+        btnSimpan.setBackground(new java.awt.Color(30,36,69));
+        btnSimpan.setForeground(new java.awt.Color(255,225,78));
+    }//GEN-LAST:event_btnSimpanMouseEntered
+
+    private void btnSimpanMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSimpanMouseExited
+        // TODO add your handling code here:
+        btnSimpan.setBackground(new java.awt.Color(255,225,78));
+        btnSimpan.setForeground(new java.awt.Color(30,36,69));
+    }//GEN-LAST:event_btnSimpanMouseExited
+
+    private void btnKembaliMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKembaliMouseEntered
+        // TODO add your handling code here:
+        btnKembali.setBackground(new java.awt.Color(239,248,255));
+        btnKembali.setForeground(new java.awt.Color(44,54,90));
+    }//GEN-LAST:event_btnKembaliMouseEntered
+
+    private void btnKembaliMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKembaliMouseExited
+        // TODO add your handling code here:
+        btnKembali.setBackground(new java.awt.Color(44,54,90));
+        btnKembali.setForeground(new java.awt.Color(239,248,255));
+    }//GEN-LAST:event_btnKembaliMouseExited
 
     /**
      * @param args the command line arguments

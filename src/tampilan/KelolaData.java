@@ -584,7 +584,7 @@ public class KelolaData extends javax.swing.JFrame {
 
     private void btnHapusMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHapusMouseEntered
         // TODO add your handling code here:
-        btnHapus.setBackground(new java.awt.Color(30,36,69));
+        btnHapus.setBackground(new java.awt.Color(102,0,0));
         btnHapus.setForeground(new java.awt.Color(255,225,78));
     }//GEN-LAST:event_btnHapusMouseEntered
 
