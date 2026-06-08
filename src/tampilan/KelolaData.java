@@ -26,9 +26,25 @@ public class KelolaData extends javax.swing.JFrame {
     
     public KelolaData() {
         initComponents();
+        tampilProvider();      
         tampilDataMentah();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setLocationRelativeTo(null); 
+    }
+    
+    private void tampilProvider() {
+        try {
+            comboProvider.removeAllItems();
+            comboProvider.addItem("-- Pilih Provider --"); 
+            Connection conn = koneksi.KoneksiDB.getKoneksi();
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery("SELECT nama_provider FROM Provider");
+            while (rs.next()) {
+                comboProvider.addItem(rs.getString("nama_provider"));
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Gagal memuat list provider: " + e.getMessage());
+        }
     }
     
     public void tampilDataMentah() {
@@ -442,11 +458,18 @@ public class KelolaData extends javax.swing.JFrame {
         try {
             Connection conn = koneksi.KoneksiDB.getKoneksi();
 
-            // Cari id_provider berdasarkan nama di ComboBox
+            // Validasi ComboBox 
+            if(comboProvider.getSelectedItem() == null || comboProvider.getSelectedItem().toString().equals("-- Pilih Provider --")) {
+                JOptionPane.showMessageDialog(this, "Silakan pilih Provider terlebih dahulu!");
+                return; 
+            }
+            
+            // Perbaikan SQL Injection dengan PreparedStatement
             String namaProv = comboProvider.getSelectedItem().toString();
-            String sqlCariProv = "SELECT id_provider FROM Provider WHERE nama_provider = '" + namaProv + "'";
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(sqlCariProv);
+            String sqlCariProv = "SELECT id_provider FROM Provider WHERE nama_provider = ?";
+            PreparedStatement pstCari = conn.prepareStatement(sqlCariProv);
+            pstCari.setString(1, namaProv);
+            ResultSet rs = pstCari.executeQuery();
 
             if (rs.next()) {
                 int idProv = rs.getInt("id_provider");

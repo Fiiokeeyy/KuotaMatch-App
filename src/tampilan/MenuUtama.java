@@ -348,20 +348,24 @@ public class MenuUtama extends javax.swing.JFrame {
                 return;
             }
 
-            // Kalau sudah pas 100, baru kita bagi 100.0 untuk perhitungan SAW (menjadi 0.4, 0.3, dst)
+            // Kalau sudah pas 100, baru kita bagi 100.0 untuk perhitungan SAW
             double bHarga = inputHarga / 100.0;
             double bKuota = inputKuota / 100.0;
             double bMasa = inputMasa / 100.0;
             double bSinyal = inputSinyal / 100.0;
 
-            // Panggil koneksi database dari package sebelah
             Connection conn = koneksi.KoneksiDB.getKoneksi();
             Statement st = conn.createStatement();
 
             // 2. Cari Nilai Max (Benefit) dan Min (Cost) dari Database
             String sqlMaxMin = "SELECT MIN(harga) as min_harga, MAX(kuota_gb) as max_kuota, MAX(masa_aktif_hari) as max_masa, MAX(skor_sinyal) as max_sinyal FROM Paket_Data";
             ResultSet rsMaxMin = st.executeQuery(sqlMaxMin);
-            rsMaxMin.next();
+            
+            // Cek jika database kosong agar tidak crash
+            if (!rsMaxMin.next() || rsMaxMin.getObject("min_harga") == null) {
+                JOptionPane.showMessageDialog(this, "Data paket masih kosong nih! Silakan tambah data paket dulu ya.");
+                return;
+            }
 
             double minHarga = rsMaxMin.getDouble("min_harga");
             double maxKuota = rsMaxMin.getDouble("max_kuota");
@@ -373,7 +377,6 @@ public class MenuUtama extends javax.swing.JFrame {
                              "FROM Paket_Data p JOIN Provider pr ON p.id_provider = pr.id_provider";
             ResultSet rsData = st.executeQuery(sqlData);
 
-            // Siapkan list sementara untuk menyimpan hasil perhitungan sebelum diurutkan
             ArrayList<Object[]> listHasil = new ArrayList<>();
 
             while (rsData.next()) {
@@ -384,10 +387,10 @@ public class MenuUtama extends javax.swing.JFrame {
                 double sinyal = rsData.getDouble("skor_sinyal");
 
                 // Proses Normalisasi SAW
-                double normHarga = minHarga / harga;         // Sifat Cost
-                double normKuota = kuota / maxKuota;         // Sifat Benefit
-                double normMasa = masa / maxMasa;            // Sifat Benefit
-                double normSinyal = sinyal / maxSinyal;      // Sifat Benefit
+                double normHarga = minHarga / harga;         
+                double normKuota = kuota / maxKuota;         
+                double normMasa = masa / maxMasa;            
+                double normSinyal = sinyal / maxSinyal;      
 
                 // Hitung Skor Akhir Preferensi (V)
                 double skorAkhir = (normHarga * bHarga) + (normKuota * bKuota) + (normMasa * bMasa) + (normSinyal * bSinyal);
@@ -395,7 +398,7 @@ public class MenuUtama extends javax.swing.JFrame {
                 listHasil.add(new Object[]{namaPaket, skorAkhir});
             }
 
-            // 4. Urutkan hasil dari skor tertinggi ke terendah (Peringkat 1 di atas)
+            // 4. Urutkan hasil dari skor tertinggi ke terendah
             Collections.sort(listHasil, new Comparator<Object[]>() {
                 public int compare(Object[] o1, Object[] o2) {
                     return Double.compare((Double) o2[1], (Double) o1[1]);
@@ -410,7 +413,6 @@ public class MenuUtama extends javax.swing.JFrame {
 
             int peringkat = 1;
             for (Object[] baris : listHasil) {
-                // Format angka skor agar rapi (3 angka di belakang koma)
                 String skorFormat = String.format("%.3f", (Double) baris[1]);
                 model.addRow(new Object[]{peringkat++, baris[0], skorFormat});
             }
@@ -418,10 +420,10 @@ public class MenuUtama extends javax.swing.JFrame {
             tabelHasil.setModel(model);
 
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Pastikan semua kotak diisi dengan angka saja ya!");
+            JOptionPane.showMessageDialog(this, "Pastikan semua kotak bobot diisi dengan angka saja ya!");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Terjadi kesalahan: " + ex.getMessage());
-}
+        }
     }//GEN-LAST:event_btnHitungActionPerformed
 
     private void txtMasaAktifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMasaAktifActionPerformed

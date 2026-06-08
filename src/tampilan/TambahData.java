@@ -23,8 +23,30 @@ public class TambahData extends javax.swing.JFrame {
      */
     public TambahData() {
         initComponents();
+        tampilProvider();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setLocationRelativeTo(null); 
+    }
+    
+    
+    // Method untuk meload data provider dari database ke ComboBox
+    private void tampilProvider() {
+        try {
+            // Hapus dulu item bawaan/hardcode dari NetBeans
+            comboProvider.removeAllItems();
+            comboProvider.addItem("-- Pilih Provider --"); 
+            
+            Connection conn = koneksi.KoneksiDB.getKoneksi();
+            Statement st = conn.createStatement();
+            String sql = "SELECT nama_provider FROM Provider";
+            ResultSet rs = st.executeQuery(sql);
+            
+            while (rs.next()) {
+                comboProvider.addItem(rs.getString("nama_provider"));
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Gagal memuat list provider: " + e.getMessage());
+        }
     }
 
     /**
@@ -289,16 +311,22 @@ public class TambahData extends javax.swing.JFrame {
     }//GEN-LAST:event_btnKembaliActionPerformed
 
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
-        // TODO add your handling code here:
         try {
             Connection conn = koneksi.KoneksiDB.getKoneksi();
 
-            // 1. Ambil nama provider dari ComboBox dan cari id_provider-nya di database
+            // 1. Ambil nama provider dan validasi jika belum milih
+            if(comboProvider.getSelectedItem() == null || comboProvider.getSelectedItem().toString().equals("-- Pilih Provider --")) {
+                JOptionPane.showMessageDialog(this, "Silakan pilih Provider terlebih dahulu!");
+                return; // Batalkan proses simpan
+            }
+            
             String namaProv = comboProvider.getSelectedItem().toString();
-            String sqlCariProv = "SELECT id_provider FROM Provider WHERE nama_provider = '" + namaProv + "'";
-
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(sqlCariProv);
+            
+            // Perbaikan Bug: Gunakan PreparedStatement untuk mencegah SQL Injection!
+            String sqlCariProv = "SELECT id_provider FROM Provider WHERE nama_provider = ?";
+            PreparedStatement pstCari = conn.prepareStatement(sqlCariProv);
+            pstCari.setString(1, namaProv);
+            ResultSet rs = pstCari.executeQuery();
 
             if(rs.next()) {
                 int idProv = rs.getInt("id_provider");
@@ -318,7 +346,7 @@ public class TambahData extends javax.swing.JFrame {
                 pst.execute();
                 JOptionPane.showMessageDialog(this, "Mantap! Data Paket Baru Berhasil Ditambahkan.");
 
-                // Opsi: Tutup jendela ini setelah selesai menyimpan
+                // Tutup jendela ini setelah selesai menyimpan (Opsional)
                 this.dispose();
             }
         } catch (NumberFormatException ex) {
